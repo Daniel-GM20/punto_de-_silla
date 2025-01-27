@@ -48,6 +48,7 @@ public class Main {
     } while (opLlenado != 3);
   }
 
+  // funcion para validar la dimension de un eje
   public static boolean validarTam(int tam) {
     if (tam > 1) {
       return true;
@@ -56,6 +57,7 @@ public class Main {
     return false;
   }
 
+  // funcion para llenar la matriz con elementos aleatorios
   public static void llenadoAutomatico() {
     for (int f = 0; f < numF; f++) {
       for (int c = 0; c < numC; c++) {
@@ -65,6 +67,7 @@ public class Main {
     imprimirMatriz();
   }
 
+  // funcion para llenar la matriz con elementos dados por el usuario
   public static void llenadoManual() {
     for (int f = 0; f < numF; f++) {
       for (int c = 0; c < numC; c++) {
@@ -75,6 +78,7 @@ public class Main {
     imprimirMatriz();
   }
 
+  // función para comenzar a iterar cada celda de la matriz y buscar el punto silla
   public static void recorrerMatriz(){
     boolean puntoSilla = false;
     for(int f=0;f<numF;f++){
@@ -87,14 +91,6 @@ public class Main {
             System.out.println("Punto de Silla encontrado, en la posición [" + f + "][" + c + "] con el valor " + matriz[f][c]);
           }
         }
-        // boolean flagMayor = buscarMayor(f,c);
-        // if(flagMayor){
-        //   boolean flagMenor = buscarMenor(f,c);
-        //   if(flagMenor){
-        //     puntoSilla=true;
-        //     System.out.println("Punto de Silla encontrado, en la posicion ["+f+"]["+c+"] con el valor "+matriz[f][c]);
-        //   }
-        // }
       }
     }
     if(!puntoSilla){
@@ -102,6 +98,7 @@ public class Main {
     }
   }
 
+  // función para iterar por columnas en una fila
   public static boolean buscarMenor(int row,int col){
     for(int c=0;c<numC;c++){
       if(matriz[row][col]>matriz[row][c]){
@@ -111,6 +108,7 @@ public class Main {
     return true;
   }
 
+  // funcion para iterar por filas en una columna
   public static boolean buscarMayor(int row,int col){
     for(int f=0;f<numF;f++){
       if(matriz[row][col]<matriz[f][col]){
@@ -120,6 +118,7 @@ public class Main {
     return true;
   }
 
+  // funcion para mostrar los elementos de una matriz
   public static void imprimirMatriz(){
     for (int i = 0; i < numF; i++) {
       for (int j = 0; j < numC; j++) {
